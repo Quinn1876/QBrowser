@@ -17,7 +17,7 @@ class Main(Tk):
   def run(cls):
     main = cls()
     main.geometry("800x600")
-    main.title("Py Browser")
+    main.title("QBrowser")
     main.mainloop()
 
   def __init__(self):
