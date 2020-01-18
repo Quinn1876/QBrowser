@@ -2,10 +2,11 @@ from tkinter import INSERT, LEFT, Text
 from html_parser.html_parser import HtmlParser
 from html_parser.tag import Tag
 
+
 class HtmlText(Text):
   def __init__(self, master, **kwargs):
     super().__init__(master, **kwargs)
-
+    self.bind("<Key>", lambda e: "break")
     self.tag_config('p', justify=LEFT)
 
   def insertHtml(self, html):
@@ -31,6 +32,9 @@ class HtmlText(Text):
         self.insert(INSERT, data, tag)
       elif type(data) is Tag:
         self.writeTag(data)
+
+  def clear(self):
+    self.replace('1.0', 'end', '')
 
 if __name__ == "__main__":
   from api_instance import ApiInstance

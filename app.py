@@ -38,6 +38,7 @@ class Main(Tk):
     ApiInstance.getHome(self.htmlLabel.updateText)
 
   def updateText(self):
+    self.htmlText.clear()
     ApiInstance.getExample1(lambda text: self.htmlText.insertHtml(text))
 
   def search(self):
