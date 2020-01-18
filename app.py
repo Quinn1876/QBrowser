@@ -7,9 +7,8 @@ from tkinter import (
   Tk,
 )
 
-from label import Label
 from api_instance import ApiInstance
-from html_textbox import HtmlText
+from widgets.html_textbox import HtmlText
 
 import time
 
@@ -24,13 +23,11 @@ class Main(Tk):
   def __init__(self):
     super().__init__()
     self.htmlDisplay = Frame(master=self)
-    self.htmlLabel = Label(master=self.htmlDisplay, text="Hello World", background="#FFFFFF")
     self.htmlText = HtmlText(master=self.htmlDisplay)
     self.searchButton = Button(master=self, text="Search", command=self.updateText)
 
     self.searchButton.pack()
     self.htmlDisplay.pack(fill='both', expand=True)
-    # self.htmlLabel.pack(fill='both', expand=True)
     self.htmlText.pack(fill='both', expand=True)
 
 
