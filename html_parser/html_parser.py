@@ -29,7 +29,7 @@ class HtmlParser(ParentParser):
      raise HtmlParserError('Invalid html')
 
   def handle_data(self, data):
-    self.parseStack.top
+    self.parseStack.top.appendData(data)
 
 class HtmlParserError(Exception):
   pass

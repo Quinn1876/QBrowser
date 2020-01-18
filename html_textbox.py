@@ -1,5 +1,6 @@
-from tkinter import LEFT, Text
+from tkinter import INSERT, LEFT, Text
 from html_parser.html_parser import HtmlParser
+from html_parser.tag import Tag
 
 class HtmlText(Text):
   def __init__(self, master, **kwargs):
@@ -13,16 +14,23 @@ class HtmlText(Text):
 
     htmlTag = parser.root
     if not htmlTag is None:
-      bodyNode = filter(HtmlText.bodyFilter, htmlTag.data)
+      bodyNode = next(filter(HtmlText.bodyFilter, htmlTag.data))
       if not bodyNode is None:
-        for node in bodyNode:
-          print(str(node))
+          self.writeTag(bodyNode)
 
   @staticmethod
   def bodyFilter(tag):
     if hasattr(tag, 'tag'):
       return tag.tag == 'body'
     return False
+
+  def writeTag(self, parent):
+    for data in parent.data:
+      if type(data) is str:
+        tag = parent.tag
+        self.insert(INSERT, data, tag)
+      elif type(data) is Tag:
+        self.writeTag(data)
 
 if __name__ == "__main__":
   from api_instance import ApiInstance

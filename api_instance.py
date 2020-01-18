@@ -5,9 +5,10 @@ BASE_URL = ' http://127.0.0.1:5000'
 class ApiInstance:
   @classmethod
   def getExample1(cls, cb):
-    respose = requests.get(f'{BASE_URL}/example1')
-    if respose.ok:
-      cb(respose.text)
+    response = requests.get(f'{BASE_URL}/example1')
+    if response.ok:
+      print(f'Respose: {response.text}')
+      cb(response.text)
 
   @classmethod
   def getHome(cls, cb):

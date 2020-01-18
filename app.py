@@ -9,6 +9,7 @@ from tkinter import (
 
 from label import Label
 from api_instance import ApiInstance
+from html_textbox import HtmlText
 
 import time
 
@@ -24,7 +25,7 @@ class Main(Tk):
     super().__init__()
     self.htmlDisplay = Frame(master=self)
     self.htmlLabel = Label(master=self.htmlDisplay, text="Hello World", background="#FFFFFF")
-    self.htmlText = Text(master=self.htmlDisplay)
+    self.htmlText = HtmlText(master=self.htmlDisplay)
     self.searchButton = Button(master=self, text="Search", command=self.updateText)
 
     self.searchButton.pack()
@@ -37,7 +38,7 @@ class Main(Tk):
     ApiInstance.getHome(self.htmlLabel.updateText)
 
   def updateText(self):
-    ApiInstance.getHome(lambda text: self.htmlText.replace('1.0', END, text))
+    ApiInstance.getExample1(lambda text: self.htmlText.insertHtml(text))
 
   def search(self):
     print(ApiInstance.postSearch('www.google.com'))
