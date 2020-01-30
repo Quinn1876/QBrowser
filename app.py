@@ -10,7 +10,6 @@ from tkinter import (
 from api_instance import ApiInstance
 from widgets.html_textbox import HtmlText
 
-import time
 
 class Main(Tk):
   @classmethod
