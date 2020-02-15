@@ -7,6 +7,7 @@ VALID_TAGS = {
   'head',
   'html',
   'p',
+  'a'
 }
 
 class HtmlParser(ParentParser):
