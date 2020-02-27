@@ -11,6 +11,12 @@ VALID_TAGS = {
 }
 
 class HtmlParser(ParentParser):
+  """
+  # HtmlParser
+
+  Currently implimented using a parser base class from html.parser
+  TODO: Write my own implementation that does not depend on this base class
+  """
   parseStack = Stack() # Parser Input
   root = None
 

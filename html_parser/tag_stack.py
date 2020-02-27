@@ -1,4 +1,7 @@
 class HtmlTagStack:
+  """
+  # HtmlTagStack
+  """
   def __init__(self):
     self._stack = []
 

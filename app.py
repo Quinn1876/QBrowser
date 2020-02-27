@@ -30,10 +30,11 @@ class Main(Tk):
     self.htmlText.pack(fill='both', expand=True)
 
 
-  def updateLabel(self):
-    ApiInstance.getHome(self.htmlLabel.updateText)
-
   def updateText(self):
+    """
+    # updateText
+    clears the htmlText display and then gets the html from example1
+    """
     self.htmlText.clear()
     ApiInstance.getExample1(lambda text: self.htmlText.insertHtml(text))
 

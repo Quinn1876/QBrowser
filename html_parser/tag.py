@@ -1,4 +1,13 @@
 class Tag:
+  """
+  # Tag
+  A data class to organize html tags
+
+  Readable properties:
+  tag -> str
+  attrs -> list
+  data -> string
+  """
   def __init__(self, tag, attrs):
     self.__tag = tag
     self.__attrs = attrs

@@ -7,6 +7,7 @@ QBrowser is a work in progress web browser build in Python.
 - body
 - html
 - head (WIP)
+- a
 
 using any of the other tags will cause an error to be thrown
 
